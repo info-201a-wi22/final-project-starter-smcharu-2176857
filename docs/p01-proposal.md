@@ -85,6 +85,6 @@ FBI. (2010, March 3). Press releases. FBI. Retrieved February 4, 2022, from http
 **H.R.266 - Paycheck Protection Program and Health Care Enhancement Act**
 H.R.266 - 116th congress (2019-2020): Paycheck protection ... (n.d.). Retrieved February 4, 2022, from https://www.congress.gov/bill/116th-congress/house-bill/266
 
-**Appendix A.: Questions**
+##Appendix A.: Questions
 1. It is our understanding that we will need to find another data set at some point, we were wondering when we should begin looking for one?
 2. We were all wondering if we were all supposed to push onto GitHub, and what would that look like on our peer's computers?
