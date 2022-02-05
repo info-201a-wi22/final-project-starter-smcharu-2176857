@@ -67,3 +67,20 @@ Our appreciation goes out to Professor David G. Hendry, for providing us with th
 ## References
 **Provider Relief Fund COVID-19 High-Impact Payments**
 “Provider Relief Fund _COVID-19_ High-Impact Payments.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 8 May 2020, https://data.cdc.gov/Administrative/Provider-Relief-Fund-COVID-19-High-Impact-Payments/b58h-s9zx.
+
+**U.S. Department of the Treasury American Rescue Plan: Treasury’s Progress and Impact After Six Months**
+U.S. Department of the Treasury American Rescue Plan: Treasury's Progress and Impact After Six Months. U.S. Department of  the Treasury, Sept. 2021, https://home.treasury.gov/system/files/136/American-Rescue-Plan-Six-Month-Report.pdf.
+
+**How the $4 Trillion Flood of Covid Relief Is Funding The Future**
+Locke, Charley, and Christopher Payne. “How the $4 Trillion Flood of Covid Relief Is Funding The Future.” The New York Times, The New York Times, 24 Nov. 2021, https://www.nytimes.com/2021/11/24/magazine/pandemic-aid.html.
+
+**Summary of the Paycheck Protection Program and Health Care Enhancement Act (COVID 3.5)**
+“Summary of the Paycheck Protection Program and Health Care Enhancement Act (COVID 3.5).” American Medical Association, 24 Apr. 2020, https://www.ama-assn.org/delivering-care/public-health/summary-paycheck-protection-program-and-health-care-enhancement-act.
+
+**Funding for Health Care Providers During the Pandemic: An Update** Nancy Ochieng, J. F. B. F. @jeanniebin on T. (2022, January 27). Funding for health care providers during the pandemic: An update. KFF. Retrieved February 4, 2022, from https://www.kff.org/coronavirus-covid-19/issue-brief/funding-for-health-care-providers-during-the-pandemic-an-update/
+
+**Press Releases**
+FBI. (2010, March 3). Press releases. FBI. Retrieved February 4, 2022, from https://www.fbi.gov/news/pressrel
+
+**H.R.266 - Paycheck Protection Program and Health Care Enhancement Act**
+H.R.266 - 116th congress (2019-2020): Paycheck protection ... (n.d.). Retrieved February 4, 2022, from https://www.congress.gov/bill/116th-congress/house-bill/266
