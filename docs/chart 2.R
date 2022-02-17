@@ -47,6 +47,6 @@ chart_3 <- ggplot(state_shape) +
                    size = .1)
   )+
   coord_map() + 
-  scale_fill_continuous(low = "#132B43", high = "Blue")+
+  scale_fill_continuous(low = "#132B43", high = "Red") +
   labs(fill = "Death Rate")
   
