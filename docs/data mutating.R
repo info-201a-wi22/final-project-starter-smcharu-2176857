@@ -10,6 +10,7 @@ df1$X1st.Round.Payment <- gsub("[$,]","",df1$X1st.Round.Payment)
 df1$X1st.Round.Payment <- as.numeric(df1$X1st.Round.Payment)
 
 #getting rid of commas and dollar signs in X2nd.Round.Payment
+
 df1$X2nd.Round.Payment <- c(df1$X2nd.Round.Payment)
 df1$X2nd.Round.Payment <- gsub("[$,]","",df1$X2nd.Round.Payment)
 df1$X2nd.Round.Payment <- as.numeric(df1$X2nd.Round.Payment)
@@ -20,5 +21,6 @@ df1_state <- df1 %>%
   group_by(State) %>% 
   select(-c(Returned..1st.Payment.)) %>%
   summarize(
-    first_round_total <- sum(X1st.Round.Payment, na.rm = TRUE)
+    first_round_total <- sum(X1st.Round.Payment, na.rm = TRUE),
+    second_round_total <- sum(X2nd.Round.Payment, na.rm = TRUE)
   ) 
