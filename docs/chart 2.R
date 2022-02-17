@@ -35,7 +35,18 @@ df_charts <- df1 %>%
 combined_data <- left_join(df_charts, df2, by = c("state"))
 
 ##making the chart
-df3 <- tolower(df3$state)
+df3$state <- tolower(df3$state)
+state_shape <- map_data("state") %>% 
+  rename(state = region) %>% 
+  left_join(df3, by = "state")
 
-chart_2 <- ggplot
+chart_3 <- ggplot(state_shape) +
+  geom_polygon(
+    mapping = aes (x = long, y = lat, group = group, fill = deaths, 
+                   color = "white", 
+                   size = .1)
+  )+
+  coord_map() + 
+  scale_fill_continuous(low = "#132B43", high = "Blue")+
+  labs(fill = "Death Rate")
   
