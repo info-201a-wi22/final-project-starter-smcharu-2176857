@@ -27,12 +27,12 @@ df_chart_1 <- df1 %>%
 
 ## making the chart
 
-chart_1 <- ggplot(data = df1_state) +
-  geom_col(mapping = aes(x = State, y = total_payments)) +
+chart_1 <- ggplot(data = df_chart_1) +
+  geom_col(mapping = aes(x = State, y = total_payments))+
   labs(
     title = "Total Number of Funds for Each State", 
     x = "State", 
     y = "Total Funds Given"
-  ) 
+  ) + geom_bar(fill = lightblue)
   
 
