@@ -21,9 +21,6 @@ df1_state <- df1 %>%
   group_by(State) %>% 
   select(-c(Returned..1st.Payment.)) %>%
   summarize(
-    first_round_total <- sum(X1st.Round.Payment, na.rm = TRUE),
-    second_round_total <- sum(X2nd.Round.Payment, na.rm = TRUE)
-  ) %>% 
-  rename(first_round = first_round_total) %>% 
-  rename(second_round = second_round_total)
-  
+    first_round_payment = sum(X1st.Round.Payment, na.rm = TRUE),
+    second_round_payment = sum(X2nd.Round.Payment, na.rm = TRUE)
+  ) 
