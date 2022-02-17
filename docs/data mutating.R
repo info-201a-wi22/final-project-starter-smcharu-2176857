@@ -31,4 +31,3 @@ df2 <- df2 %>%
 #Combining df1 and df2
 combined_data <- left_join(df1_state, df2, by = c("State"))
 
-#June 10 , 2020
