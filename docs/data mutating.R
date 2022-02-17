@@ -24,3 +24,10 @@ df1_state <- df1 %>%
     first_round_payment = sum(X1st.Round.Payment, na.rm = TRUE),
     second_round_payment = sum(X2nd.Round.Payment, na.rm = TRUE)
   ) 
+
+#Renaming column "state" to "State"
+df2 <- df2 %>% 
+  rename(State = state)
+
+#Combining df1 and df2
+combined_data <- left_join(df1_state, df2, by = c("State"))
