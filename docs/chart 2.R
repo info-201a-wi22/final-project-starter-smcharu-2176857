@@ -5,8 +5,12 @@
 df1 <- read.csv("https://data.cdc.gov/api/views/b58h-s9zx/rows.csv?accessType=DOWNLOAD", header = TRUE, stringsAsFactors = FALSE)
 df2 <- read.csv("https://api.covidtracking.com/v1/states/current.csv", header = TRUE, stringsAsFactors = FALSE)
 df3 <- read.csv("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnytimes%2Fcovid-19-data%2Fmaster%2Fus-states.csv&filename=us-states.csv", header = TRUE, stringsAsFactors = FALSE)
+View(df3)
 
-install.packages("ggmap")
+#nstall.packages("ggmap")
+#install.packages("sf")
+#install.packages("giscoR")
+
 
 library("dplyr")
 library("tidyr")
@@ -15,6 +19,9 @@ library("ggplot2")
 library("maps")
 library("mapdata")
 library("ggmap")
+library("leaflet")
+library(sf)
+library(giscoR)
 
 
 df1$X1st.Round.Payment <- c(df1$X1st.Round.Payment)
@@ -38,12 +45,8 @@ df_charts <- df1 %>%
 combined_data <- left_join(df_charts, df2, by = c("state"))
 
 ##making the chart
-df3$state <- tolower(df3$state)
 
-state_shape <- map_data("state") %>% 
-  rename(state = region) %>% 
-  left_join(df3, by = "state")
-
+# Define a minimalist theme for maps
 blank_theme <- theme_bw() +
   theme(
     axis.line = element_blank(),        # remove axis lines
@@ -55,6 +58,12 @@ blank_theme <- theme_bw() +
     panel.grid.minor = element_blank(), # remove minor grid lines
     panel.border = element_blank()      # remove border around plot
   )
+
+df3$state <- tolower(df3$state)
+
+state_shape <- map_data("state") %>% 
+  rename(state = region) %>% 
+  left_join(df3, by = "state", na.rm = TRUE)
 
 chart_3 <- ggplot(state_shape) +
   geom_polygon(
