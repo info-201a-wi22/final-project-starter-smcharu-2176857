@@ -33,6 +33,6 @@ chart_1 <- ggplot(data = df_chart_1) +
     title = "Total Number of Funds for Each State", 
     x = "State", 
     y = "Total Funds Given"
-  ) + geom_bar(fill = lightblue)
+  ) 
   
 
