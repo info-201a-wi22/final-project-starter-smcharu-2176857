@@ -4,18 +4,15 @@ df2 <- read.csv("https://api.covidtracking.com/v1/states/current.csv", header = 
 library("dplyr")
 library("tidyr")
 
-df1 <- df1 %>% 
-  replace_na(list(X1st.Round.Payment = 0))
+#getting rid of commas and dollar signs in X1st.Round.Payment
+df1$X1st.Round.Payment <- c(df1$X1st.Round.Payment)
+df1$X1st.Round.Payment <- gsub("[$,]","",df1$X1st.Round.Payment)
+df1$X1st.Round.Payment <- as.numeric(df1$X1st.Round.Payment)
 
-replace_na(list(x = 0, y = 0))
-
-# Trying to get rid of dollar sign and spaces in X1st.Round.Payment bc you cant
-# add up the values with the dollar sign and spaces. When I run it, nothing 
-# changes in df1 
-df1$X1st.Round.Payment <- gsub("$   ","",as.character(df1$X1st.Round.Payment, na.rm = TRUE))
-
-#Example from internet for what I did above
-df1$x1<-gsub("1","",as.character(df1$x1))
+#getting rid of commas and dollar signs in X2nd.Round.Payment
+df1$X2nd.Round.Payment <- c(df1$X2nd.Round.Payment)
+df1$X2nd.Round.Payment <- gsub("[$,]","",df1$X2nd.Round.Payment)
+df1$X2nd.Round.Payment <- as.numeric(df1$X2nd.Round.Payment)
 
 # Trying to get sum of values, but I can't because of the stupid dollar and spaces
 # It should work otherwise? idfk anymore man
@@ -23,5 +20,5 @@ df1_state <- df1 %>%
   group_by(State) %>% 
   select(-c(Returned..1st.Payment.)) %>%
   summarize(
-    first_round_total <- length(X1st.Round.Payment, na.rm = TRUE)
+    first_round_total <- sum(X1st.Round.Payment, na.rm = TRUE)
   ) 
