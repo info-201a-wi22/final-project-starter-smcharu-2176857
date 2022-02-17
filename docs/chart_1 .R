@@ -1,14 +1,11 @@
 df1 <- read.csv("https://data.cdc.gov/api/views/b58h-s9zx/rows.csv?accessType=DOWNLOAD", header = TRUE, stringsAsFactors = FALSE)
 df2 <- read.csv("https://api.covidtracking.com/v1/states/current.csv", header = TRUE, stringsAsFactors = FALSE)
-df3 <- read.csv("https://healthdata.gov/resource/g62h-syeh.csv", header = TRUE, stringsAsFactors = FALSE)
+
 
 
 library("dplyr")
 library("tidyr")
 library("ggplot2")
-library("stringr")
-
-
 
 df1$X1st.Round.Payment <- c(df1$X1st.Round.Payment)
 df1$X1st.Round.Payment <- gsub("[$,]","",df1$X1st.Round.Payment)
@@ -27,7 +24,6 @@ df_chart_1 <- df1 %>%
     second_round_payment = sum(X2nd.Round.Payment, na.rm = TRUE)
   ) %>% 
   mutate(total_payments = first_round_payment + second_round_payment)
-df3$date <- str_sub(df3$date, end = -14)
 
 ## making the chart
 
@@ -37,10 +33,6 @@ chart_1 <- ggplot(data = df_chart_1) +
     title = "Total Number of Funds for Each State", 
     x = "State", 
     y = "Total Funds Given"
-<<<<<<< HEAD
-  )
-=======
   ) 
->>>>>>> 5d29a5db08bf5f704c3145ed79ae062b4fc6b8e7
   
 

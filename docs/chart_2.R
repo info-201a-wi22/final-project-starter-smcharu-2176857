@@ -44,6 +44,7 @@ df_charts <- df1 %>%
 ##combined datasetforeverything
 combined_data <- left_join(df_charts, df2, by = c("state"))
 
+<<<<<<< HEAD:docs/chart 2.R
 ##making the chart
 
 # Define a minimalist theme for maps
@@ -59,13 +60,15 @@ blank_theme <- theme_bw() +
     panel.border = element_blank()      # remove border around plot
   )
 
+=======
+>>>>>>> 5d29a5db08bf5f704c3145ed79ae062b4fc6b8e7:docs/chart_2.R
 df3$state <- tolower(df3$state)
 
 state_shape <- map_data("state") %>% 
   rename(state = region) %>% 
   left_join(df3, by = "state", na.rm = TRUE)
 
-chart_3 <- ggplot(state_shape) +
+chart_2 <- ggplot(state_shape) +
   geom_polygon(
     mapping = aes(x = long, y = lat, group = group, fill = deaths, 
                    color = "white", 
