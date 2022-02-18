@@ -89,16 +89,13 @@ This table is critical to our research questions of which states were affected b
 ## **CHART 1**:
 This chart expresses the amount of allocation funds each state in the United States received during the two periods of distribution which happened in between January 1, 2020, and June 10, 2020. The reason why we are choosing to show this data is because it gives the reader a sense of how the money was allocated from state to state. The reader can easily view the amount of money that specific states in comparison to under ones. For example, it is very clear that New York got more funding than other states and with this, the assumption can be made that there were more cases, or hospitalizations in that state, if the money was allocated in an accurate manner. 
 
-
 ```{r, include = FALSE}
 source("../source/chart_1.R")
 ```
 
-<<<<<<< HEAD
+
 ```{r, echo = FALSE}
 plot(chart_1)
-=======
->>>>>>> c635e4379c5a4ede7c4394964c6af86ab9e11027
 ```
 
 ## **CHART 2**:  
@@ -106,9 +103,11 @@ This scatter plot the spikes in data. As time goes by, cases increase but the
 number of deaths are slowly flattening out which means that vaccinations, 
 mandates, and other precautions have reduced the death-risk of COVID-19 though
 the cases have continued to increase. This is important in answering the question on how COVID-19 has been changing over time. This graph shows that some progress has been being made as the death rates have decreased over time, emphasizes still that more preventative measures must be taken as the case rates are still increasing.  
+
 ```{r, include = FALSE}
 source("../source/chart_2.R")
 ```
 
 ```{r echo = FALSE}
 plot(chart_2)
+```
