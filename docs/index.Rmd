@@ -41,6 +41,7 @@ Since the start of the coronavirus pandemic, policies have been enacted to ease 
 2. Which states had the most patients?
 3. How has COVID-19 progressed over time?
 
+
 The questions are important because during the era of the COVID-19 pandemic, while population health was affected by skyrocketing death rates, the economy was also an issue. There was a lack of finances in the healthcare system with the large influx of infected people. The motivation behind trying to find which states and cities were affected by the pandemic the most was to figure out how the resources can be better allocated. Within finding out what cities or states were affected most, one can investigate what about them caused such high rates, whether it be social inequity, poor financial standing, or merely the fact that policies were not enacted. This is important as it relates to the first questions about relief funds, in these states and/or cities that were affected the most, what were the criteria in determining the number of funds needed. Or vice versa, by seeing the distribution of funds to cities one can answer the question of which states were affected most.
   
 ## **THE DATASET CONCERN**
