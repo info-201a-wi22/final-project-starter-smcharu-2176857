@@ -12,10 +12,27 @@ hospital_df <- hospital_df %>%
 
 test <- hospital_df$year
 
-covid_patients_compare <- hospital_df %>% 
-  filter(year == 2020) %>% 
+patients_2020 <- hospital_df %>% 
   group_by(state) %>% 
-  summarize(proportion_2020 = inpatient_beds_used_covid/sum(inpatient_beds_used_covid, na.rm = TRUE) * 100) 
+  summarize(state_total = n()) %>% 
+  mutate(percentage = round(state_total / sum(state_total), 2))
   
   
+
+percentage_of_patients <-
+  filter(year == 2020) %>% 
+
+patients_2021 <- hospital_df %>% 
+  filter(year == 2021) %>% 
+  group_by(state) %>% 
+  summarize(
+    total_covid_patients_2021 = sum(inpatient_beds_used_covid)
+  ) 
+
+covid_patients_compare <- left_join(patients_2020, patients_2021,  by = c("state"))
+
+test <- hospital_df %>% 
+  filter(state == "FL")
+
+View(hospital_df)
 
