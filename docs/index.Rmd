@@ -1,6 +1,6 @@
 ---
 title: "Jazz-5"
-author: "Saimanasvi Charugundla,Niyat Efrem, John Dato, Rim Wolde"
+author: "Saimanasvi Charugundla, Niyat Efrem, John Dato, Rim Wolde"
 date: "2/17/2022"
 affiliation: "INFO-201: Technical Foundations of Informatics - The Information School - University of Washington"
 output: html_document
@@ -8,6 +8,8 @@ output: html_document
 
 
 ```{r setup, include=FALSE}
+library(knitr)
+
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -15,16 +17,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
 
-##**ABSTARCT:**
+## **ABSTARCT:**
 Our main question is “How has COVID-19 relief funding impacted society?”. We believe this question to be significant because through this research we can precisely see the impact of COVID-19 based on the amount of relief funding a certain location received. To address this question, we will be examining a dataset that covers the distribution of select relief funds, as well as comparing that to the impact it has had on healthcare providers.
 
-##**KEYWORDS**
+## **KEYWORDS**
 Healthcare, Economy, Coronavirus, Law
 
-##**INTRODUCTION**
+## **INTRODUCTION**
 Since the start of the coronavirus pandemic, policies have been enacted to ease the financial pressure that hospitals and healthcare providers on the front lines have been going through with the increasing number of COVID-19 cases. Two acts that have provided relief funds for hospitals and front-line workers all over the country are the bipartisan CARES Act and the Paycheck Protection Program and Health Care Enhancement Act. The goal of these bills is to replenish the finances of hospitals around the country that have been drastically impacted. In total, they have provided $175 billion in funds and have been distributed in two rounds of payments to hospitals that have had an influx of patients with the virus. Our project analyzes the data represented in this dataset to better understand the effectiveness of the relief funds and to also have an understanding of how COVID-19 has impacted the healthcare system as well as the economy.
 
-##**DESIGN SITUATION**
+## **DESIGN SITUATION**
 **Project Framing**: We are hoping to take this dataset and analyze the distribution of funding and compare it to the impact of COVID-19 to get a clear picture of the help that these healthcare providers received through the funds.
 
 **Human Values**: The funding was given by the government through the CARES Act and the Paycheck Protection Program and Health Care Enhancement Act allows for security for all parts of healthcare systems such as the administration, hospitals, front-line workers, etc. Through these acts, the United States government is giving charity to different hospitals all over the country. The government is splitting up funds to each location depending on the number of cases in the area and with this, they are practicing equity.
@@ -37,16 +39,16 @@ Since the start of the coronavirus pandemic, policies have been enacted to ease 
 
 **Harms**: When a viewer takes a look at this dataset, they might mistake this dataset to be a record of the total amount of funding that these healthcare administrators had received, rather than just the amount of money that they received through these two Acts.
 
-##**HOW COVID-19 IMPACTED THE HEALTHCARE SYSTEM**
+## **HOW COVID-19 IMPACTED THE HEALTHCARE SYSTEM**
 1. How were relief funds decided during the pandemic, what were the criteria?
 2. Which cities had the most patients?
 3. Which states were affected by the pandemic most?
   The questions are important because during the era of the COVID-19 pandemic, while population health was affected by skyrocketing death rates, the economy was also an issue. There was a lack of finances in the healthcare system with the large influx of infected people. The motivation behind trying to find which states and cities were affected by the pandemic the most was to figure out how the resources can be better allocated. Within finding out what cities or states were affected most, one can investigate what about them caused such high rates, whether it be social inequity, poor financial standing, or merely the fact that policies were not enacted. This is important as it relates to the first questions about relief funds, in these states and/or cities that were affected the most, what were the criteria in determining the number of funds needed. Or vice versa, by seeing the distribution of funds to cities one can answer the question of which cities and states were affected most.
   
-##**THE DATASET CONCERN**
+## **THE DATASET CONCERN**
 **SIZE AND COMPLEXITY**: This data set consists of 6 features (columns) and more than 200 observations (rows). The data is taken from a national scale of the United States of America.
 
-##**DATA PROVENANCE:**
+## **DATA PROVENANCE:**
 
 **Who or what is represented in the data?** The data represents the quantitative impact of the bipartisan CARES Act and the Paycheck Protection Program and Health Enhancement Act, by showing the number of funds given to hospitals around the nation. In terms of representation in the data, in an obvious sense, the hospitals who treated COVID-19 patients are represented as they were the ones who received the funds. In an analytical lens, this also represents the impact that COVID-19 had on the healthcare system, it represents the economic standing and need of these hospitals, which can be correlated to the financial standing of the states in which they are located.
 
@@ -58,16 +60,16 @@ Since the start of the coronavirus pandemic, policies have been enacted to ease 
 
 **How did you obtain the data? Do you credit the source of the data?** We obtained it through the “DATA.gov” website that the government has. The website contains datasets from a range of subjects. We selected the U.S. Department of Health which contained datasets concerning the health and well-being of Americans, ranging from emergency release funds to risk behavior in teens. After locating this data set, it led us to the CDC website, we were then able to download the data from there.
 
-##**EXPECTED LIMITATIONS**
+## **EXPECTED LIMITATIONS**
 While it is hard to determine what is going to happen in the near future, our data gives us a small glimpse into what might possibly happen. We cannot exactly predict what happens today or in the future but having data helps us understand what could happen in the future and what we can do to prevent or enable something from happening. In the case of COVID-19 and our current situation, a good implication for most if not all of our policymakers is that they will continue to discuss and work with releasing funds to continue the financial assistance at hospitals as well as getting rid of COVID-19. For technologists, this might look a little different, as they will most likely continue to work and assist with pieces of technology that work with and around eradicating COVID-19. For designers, in which I'm assuming people like data scientists, will be working in the background but they have the most important role, in which they study the numbers, review trends, and observe what is happening. Without designers around doing their work and working with this type of data, it would be hard to follow trends and would make it a very hard time for scientists in other fields to understand the virus itself and how to combat it.
 
-##**LIMITATIONS**
+## **LIMITATIONS**
 I think one limitation that is inevitable when working with data is trying to see if the data can answer all the questions we have. Is it sufficient enough to the point where our cases are made through our data and answers all the questions we face? Another limitation that could happen could possibly be underestimating the data and not really having it show what we want it to show. When it comes to policymakers, technologists, and designers, I think that they will also face some limitations. I expect limitations when it comes to their choices and studies working with COVID-19, as it is something that is already hard enough to work with so just trying to figure out how to get rid of it while also dealing with things like the reliability of data, the quality and even things as small as having your whole team is something that gets more difficult. In regards to our questions, I believe the only limitation would be again trying to answer those questions not with our words but with data.
 
-##**ACKNOWLEDGEMENTS**
+## **ACKNOWLEDGEMENTS**
 Our appreciation goes out to Professor David G. Hendry, for providing us with the support and opportunity to do extensive research on human well-being. In addition, we thank our Teaching Assistant, Akshita Gundavarapu who has provided us guidance throughout this project and shared their insight that helped in improving our research.
 
-##**REFERENCES**
+## **REFERENCES**
 
 **Provider Relief Fund COVID-19 High-Impact Payments** “Provider Relief Fund COVID-19 High-Impact Payments.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 8 May 2020, https://data.cdc.gov/Administrative/Provider-Relief-Fund-COVID-19-High-Impact-Payments/b58h-s9zx.
 
@@ -83,39 +85,44 @@ Our appreciation goes out to Professor David G. Hendry, for providing us with th
 
 **H.R.266 - Paycheck Protection Program and Health Care Enhancement Act** H.R.266 - 116th congress (2019-2020): Paycheck protection ... (n.d.). Retrieved February 4, 2022, from https://www.congress.gov/bill/116th-congress/house-bill/266
 
-##**INFORMATIONFROM SUMMARY INFORMATION**
+## **INFORMATIONFROM SUMMARY INFORMATION**
 
-##**OUR TABLE + OBSERVATIONS**
+## **OUR TABLE + OBSERVATIONS**
 
 
-##**CHART 1**:
-This chart expresses the amount of allocation funds each state in the United States received during the two periods of distribution which happened in between January 1, 2020, and June 10, 2020. 
+## **CHART 1**:
+This chart expresses the amount of allocation funds each state in the 
+United States received during the two periods of distribution which happened 
+in between January 1, 2020, and June 10, 2020. The reason why we are choosing 
+to show this data is because it gives the reader a sense of how the money 
+was allocated from state to state. The reader can easily view the amount of 
+money that specific states in comparison to under ones. For example, it is 
+very clear that New York got more funding than other states and with this, the 
+assumtion can be made that there were more cases, or hospilizations in that 
+state, if the money was allocated in an accurate manner. 
 
-```{r include = FALSE}
-source("chart_1.R")
+
+```{r, include = FALSE}
+source("../source/chart_1.R")
 ```
-```{r echo=TRUE}
-plot(chart_1)
-```
-
-##CHART 2**:
-This chart expresses that the rate of deaths due to COVID-19. The reason why this chart was included was because it shows which states were affected by COVID-19 the most as it shows the death rates comparative to state by state.Through showing the distribution of deaths between all these states, one can compare it to the chart of hospital funds one can connect the dots in why certain states got more money. Hence this graph answers the question of which states were affected the most and also how it affected the allocation of relief funds.
-```{r include=FALSE}
-source("chart_2.R")
-```
+<<<<<<< HEAD
 
 ```{r, echo=FALSE}
 plot(chart_2)
+=======
+```{r, echo=TRUE}
+plot(chart_1)
+>>>>>>> 6a0b4a686a88354d0e80cec5d46a93a63928a1f2
 ```
 
-##**CHART 3**: check this 
+##**CHART 2**: check this 
 This chart is helpful in understanding the trend of hospitalizations in the United States by year. This gives the reader the ability to understand how the trend of hospital rates which is key, especially in the years of 2020 and 2021, in understanding the trends of hospitalizations and seeing have COVID affects hospital occupancy.    
-```{r include = FALSE}
-source("chart_3.R")
+```{r, include = FALSE}
+source("../source/chart_2.R")
 ```
 
 ```{r echo=FALSE}
-plot(chart_3_a)
+plot(chart_2)
 ```
 ## ACCESSING THE /source DIRECTORY
 ### Example 1: Source some code and run a function

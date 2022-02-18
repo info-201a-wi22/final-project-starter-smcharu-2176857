@@ -27,12 +27,13 @@ df_chart_1 <- df1 %>%
 
 ## making the chart
 
-chart_1 <- ggplot(data = df_chart_1) +
-  geom_col(mapping = aes(x = State, y = total_payments))+
+chart_1 <- ggplot(data = df_chart_1) + 
+  geom_col(mapping = aes(x = State, y = total_payments)) +
   labs(
     title = "Total Number of Funds for Each State", 
     x = "State", 
     y = "Total Funds Given"
-  ) 
+  ) + theme(axis.text.x = element_text(angle = 90))
+  
   
 
