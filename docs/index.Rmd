@@ -111,9 +111,3 @@ source("../source/chart_2.R")
 
 ```{r echo = FALSE}
 plot(chart_2)
-<<<<<<< HEAD
-```
-
-=======
-```
->>>>>>> 6eb5e5e7e2a8fc584fab9e446e763ecc8cfa2086
