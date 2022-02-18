@@ -14,14 +14,10 @@ View(df3)
 
 library("dplyr")
 library("tidyr")
-library("leaflet")
 library("ggplot2")
 library("maps")
 library("mapdata")
 library("ggmap")
-library("leaflet")
-library(sf)
-library(giscoR)
 
 
 df1$X1st.Round.Payment <- c(df1$X1st.Round.Payment)
@@ -44,7 +40,6 @@ df_charts <- df1 %>%
 ##combined datasetforeverything
 combined_data <- left_join(df_charts, df2, by = c("state"))
 
-<<<<<<< HEAD:docs/chart 2.R
 ##making the chart
 
 # Define a minimalist theme for maps
@@ -60,8 +55,6 @@ blank_theme <- theme_bw() +
     panel.border = element_blank()      # remove border around plot
   )
 
-=======
->>>>>>> 5d29a5db08bf5f704c3145ed79ae062b4fc6b8e7:docs/chart_2.R
 df3$state <- tolower(df3$state)
 
 state_shape <- map_data("state") %>% 
@@ -76,8 +69,7 @@ chart_2 <- ggplot(state_shape) +
   ) +
   coord_map() + 
   scale_fill_continuous(low = "#132B43", high = "Red") +
-  labs(fill = "Death Rate") +
-  blank_theme
+  labs(fill = "Death Rate")
 
 
   

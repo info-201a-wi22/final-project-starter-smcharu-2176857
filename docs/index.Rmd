@@ -89,16 +89,16 @@ Our appreciation goes out to Professor David G. Hendry, for providing us with th
 
 
 ##**CHART 1**:
-This chart expresses the amount of allocation funds each state in the United States received during the two periods of distribution which happened in between January 1, 2020, and June 10, 2020. 
+This chart expresses the amount of allocation funds each state in the United States received during the two periods of distribution which happened in between January 1, 2020, and June 10, 2020. the reason why wer are choosing to show this data is because it gives the reader a sense of how the money was split up from state to state. 
 
-```{r include = FALSE}
+```{r, include = FALSE}
 source("chart_1.R")
 ```
-```{r echo=TRUE}
+```{r, echo=TRUE}
 plot(chart_1)
 ```
 
-##CHART 2**:
+##**CHART 2**:
 This chart expresses that the rate of deaths due to COVID-19. The reason why this chart was included was because it shows which states were affected by COVID-19 the most as it shows the death rates comparative to state by state.Through showing the distribution of deaths between all these states, one can compare it to the chart of hospital funds one can connect the dots in why certain states got more money. Hence this graph answers the question of which states were affected the most and also how it affected the allocation of relief funds.
 ```{r include=FALSE}
 source("chart_2.R")
