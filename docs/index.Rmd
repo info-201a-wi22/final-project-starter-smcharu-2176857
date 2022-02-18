@@ -13,7 +13,6 @@ library(knitr)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ## **ABSTARCT:**
 Our main question is “How has COVID-19 relief funding impacted society?”. We believe this question to be significant because through this research we can precisely see the impact of COVID-19 based on the amount of relief funding a certain location received. To address this question, we will be examining a dataset that covers the distribution of select relief funds, as well as comparing that to the impact it has had on healthcare providers.
 
@@ -39,8 +38,7 @@ Since the start of the coronavirus pandemic, policies have been enacted to ease 
 ## **HOW COVID-19 IMPACTED THE HEALTHCARE SYSTEM**
 1. How were relief funds decided during the pandemic, what were the criteria?
 2. Which states had the most patients?
-3. How has COVID-19 progressed over time?
-
+3. How has COVID-19 progressed over time? 
 
 The questions are important because during the era of the COVID-19 pandemic, while population health was affected by skyrocketing death rates, the economy was also an issue. There was a lack of finances in the healthcare system with the large influx of infected people. The motivation behind trying to find which states and cities were affected by the pandemic the most was to figure out how the resources can be better allocated. Within finding out what cities or states were affected most, one can investigate what about them caused such high rates, whether it be social inequity, poor financial standing, or merely the fact that policies were not enacted. This is important as it relates to the first questions about relief funds, in these states and/or cities that were affected the most, what were the criteria in determining the number of funds needed. Or vice versa, by seeing the distribution of funds to cities one can answer the question of which states were affected most.
   
