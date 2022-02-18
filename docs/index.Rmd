@@ -93,8 +93,11 @@ This chart expresses the amount of allocation funds each state in the United Sta
 source("../source/chart_1.R")
 ```
 
+<<<<<<< HEAD
 ```{r, echo = FALSE}
 plot(chart_1)
+=======
+>>>>>>> c635e4379c5a4ede7c4394964c6af86ab9e11027
 ```
 
 ## **CHART 2**:  
@@ -108,4 +111,9 @@ source("../source/chart_2.R")
 
 ```{r echo = FALSE}
 plot(chart_2)
+<<<<<<< HEAD
 ```
+
+=======
+```
+>>>>>>> 6eb5e5e7e2a8fc584fab9e446e763ecc8cfa2086
