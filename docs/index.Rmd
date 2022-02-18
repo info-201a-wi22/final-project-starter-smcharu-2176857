@@ -13,9 +13,6 @@ library(knitr)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
 
 ## **ABSTARCT:**
 Our main question is “How has COVID-19 relief funding impacted society?”. We believe this question to be significant because through this research we can precisely see the impact of COVID-19 based on the amount of relief funding a certain location received. To address this question, we will be examining a dataset that covers the distribution of select relief funds, as well as comparing that to the impact it has had on healthcare providers.
@@ -41,9 +38,9 @@ Since the start of the coronavirus pandemic, policies have been enacted to ease 
 
 ## **HOW COVID-19 IMPACTED THE HEALTHCARE SYSTEM**
 1. How were relief funds decided during the pandemic, what were the criteria?
-2. Which cities had the most patients?
-3. Which states were affected by the pandemic most?
-  The questions are important because during the era of the COVID-19 pandemic, while population health was affected by skyrocketing death rates, the economy was also an issue. There was a lack of finances in the healthcare system with the large influx of infected people. The motivation behind trying to find which states and cities were affected by the pandemic the most was to figure out how the resources can be better allocated. Within finding out what cities or states were affected most, one can investigate what about them caused such high rates, whether it be social inequity, poor financial standing, or merely the fact that policies were not enacted. This is important as it relates to the first questions about relief funds, in these states and/or cities that were affected the most, what were the criteria in determining the number of funds needed. Or vice versa, by seeing the distribution of funds to cities one can answer the question of which cities and states were affected most.
+2. Which states had the most patients?
+3. How has COVID-19 progressed over time?
+The questions are important because during the era of the COVID-19 pandemic, while population health was affected by skyrocketing death rates, the economy was also an issue. There was a lack of finances in the healthcare system with the large influx of infected people. The motivation behind trying to find which states and cities were affected by the pandemic the most was to figure out how the resources can be better allocated. Within finding out what cities or states were affected most, one can investigate what about them caused such high rates, whether it be social inequity, poor financial standing, or merely the fact that policies were not enacted. This is important as it relates to the first questions about relief funds, in these states and/or cities that were affected the most, what were the criteria in determining the number of funds needed. Or vice versa, by seeing the distribution of funds to cities one can answer the question of which states were affected most.
   
 ## **THE DATASET CONCERN**
 **SIZE AND COMPLEXITY**: This data set consists of 6 features (columns) and more than 200 observations (rows). The data is taken from a national scale of the United States of America.
@@ -85,21 +82,11 @@ Our appreciation goes out to Professor David G. Hendry, for providing us with th
 
 **H.R.266 - Paycheck Protection Program and Health Care Enhancement Act** H.R.266 - 116th congress (2019-2020): Paycheck protection ... (n.d.). Retrieved February 4, 2022, from https://www.congress.gov/bill/116th-congress/house-bill/266
 
-## **INFORMATIONFROM SUMMARY INFORMATION**
-
 ## **OUR TABLE + OBSERVATIONS**
-
+This table is critical to our research questions of which states were affected by the pandemic the most and also in determining how allocation funds were distributed among state to state. The table shows the amount of hospitalizations due to COVID-19 per state over the time period 2020-2021, and it also shows the percentages each state had in the total amount of hospitalizations in the U.S. as a whole. For example it shows that Washington state had 9,348 hospitalizations and this accounts for 1.3% of total hospitalizations in the U.S. Through this we are able to see which states had the most hospitalizations compared to each other, and compare it to the allocation funds to see if the states with the most hospitalizations got the most funds. 
 
 ## **CHART 1**:
-This chart expresses the amount of allocation funds each state in the 
-United States received during the two periods of distribution which happened 
-in between January 1, 2020, and June 10, 2020. The reason why we are choosing 
-to show this data is because it gives the reader a sense of how the money 
-was allocated from state to state. The reader can easily view the amount of 
-money that specific states in comparison to under ones. For example, it is 
-very clear that New York got more funding than other states and with this, the 
-assumtion can be made that there were more cases, or hospilizations in that 
-state, if the money was allocated in an accurate manner. 
+This chart expresses the amount of allocation funds each state in the United States received during the two periods of distribution which happened in between January 1, 2020, and June 10, 2020. The reason why we are choosing to show this data is because it gives the reader a sense of how the money was allocated from state to state. The reader can easily view the amount of money that specific states in comparison to under ones. For example, it is very clear that New York got more funding than other states and with this, the assumption can be made that there were more cases, or hospitalizations in that state, if the money was allocated in an accurate manner. 
 
 
 ```{r, include = FALSE}
@@ -109,8 +96,11 @@ source("../source/chart_1.R")
 plot(chart_1)
 ```
 
-##**CHART 2**: check this 
-This chart is helpful in understanding the trend of hospitalizations in the United States by year. This gives the reader the ability to understand how the trend of hospital rates which is key, especially in the years of 2020 and 2021, in understanding the trends of hospitalizations and seeing have COVID affects hospital occupancy.    
+## **CHART 2**:  
+This scatter plot the spikes in data. As time goes by, cases increase but the 
+number of deaths are slowly flattening out which means that vaccinations, 
+mandates, and other precautions have reduced the death-risk of COVID-19 though
+the cases have continued to increase. This is important in answering the question on how COVID-19 has been changing over time. This graph shows that some progress has been being made as the death rates have decreased over time, emphasizes still that more preventative measures must be taken as the case rates are still increasing.  
 ```{r, include = FALSE}
 source("../source/chart_2.R")
 ```
@@ -118,40 +108,3 @@ source("../source/chart_2.R")
 ```{r echo=FALSE}
 plot(chart_2)
 ```
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and 
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
-```
-
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
-```
-
-> `r msg` Hope you have a good day!! 
-
-## ABOUT THIS FILE: 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

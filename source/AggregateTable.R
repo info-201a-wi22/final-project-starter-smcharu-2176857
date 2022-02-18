@@ -41,7 +41,7 @@ hospital_df <- hospital_df %>%
 
 # Table with each state, total amount of funding they got, and the pecentage
 # of the total that it is
-total_patient_comparision <- hospital_df %>% 
+total_patient_comparison <- hospital_df %>% 
   group_by(state) %>% 
   summarize(state_total_patients = sum(inpatient_beds_used_covid, na.rm = TRUE)) %>% 
   mutate(us_total_patients = sum(state_total_patients)) %>% 
@@ -52,9 +52,10 @@ total_patient_comparision <- hospital_df %>%
   select(-c(us_total_patients))
 
 # Renaming column to join data sets by State
-total_patient_comparision <- total_patient_comparision %>% 
+total_patient_comparison <- total_patient_comparison %>% 
   rename(State = state)
 
 # Joining datasets together 
-patient_funding_comparision <- 
-  left_join(state_total_funding, total_patient_comparision, by = c("State"))
+patient_funding_comparison <- 
+  left_join(state_total_funding, total_patient_comparison, by = c("State"))
+
