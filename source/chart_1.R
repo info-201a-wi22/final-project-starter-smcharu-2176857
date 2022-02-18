@@ -33,7 +33,7 @@ chart_1 <- ggplot(data = df_chart_1) +
     title = "Total Number of Funds for Each State", 
     x = "State", 
     y = "Total Funds Given"
-  ) +
-  options(scipen = 999) 
+  ) + theme(axis.text.x = element_text(angle = 90))
+  
   
 
