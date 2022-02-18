@@ -104,7 +104,7 @@ This chart expresses that the rate of deaths due to COVID-19. The reason why thi
 source("chart_2.R")
 ```
 
-```{r echo=FALSE}
+```{r, echo=FALSE}
 plot(chart_2)
 ```
 

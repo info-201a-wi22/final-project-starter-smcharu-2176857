@@ -4,7 +4,9 @@ library(stringr)
 library(dplyr)
 library("ggplot2")
 df
-df3 = df3$date
+df3 
+
+df3$date
 
 df3 <- df3 %>% 
   mutate(year = substr(df3$date, start = 1, stop = 4))

@@ -31,8 +31,7 @@ df_charts <- df1 %>%
     second_round_payment = sum(X2nd.Round.Payment, na.rm = TRUE)) %>% 
   mutate(total_payments = first_round_payment + second_round_payment) %>% 
   rename(state = State)
-##combineddatasetforeverything ##askforhowtomakeabettergraph
-
+##combined datasetforeverything
 combined_data <- left_join(df_charts, df2, by = c("state"))
 
 df3$state <- tolower(df3$state)
@@ -42,7 +41,7 @@ state_shape <- map_data("state") %>%
 
 chart_2 <- ggplot(state_shape) +
   geom_polygon(
-    mapping = aes (x = long, y = lat, group = group, fill = state, 
+    mapping = aes (x = long, y = lat, group = group, fill = deaths, 
                    color = "white", 
                    size = .1)
   )+
