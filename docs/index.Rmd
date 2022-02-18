@@ -92,14 +92,9 @@ This chart expresses the amount of allocation funds each state in the United Sta
 ```{r, include = FALSE}
 source("../source/chart_1.R")
 ```
-<<<<<<< HEAD
 
-```{r, echo=FALSE}
-plot(chart_2)
-=======
-```{r, echo=TRUE}
+```{r, echo = FALSE}
 plot(chart_1)
->>>>>>> 6a0b4a686a88354d0e80cec5d46a93a63928a1f2
 ```
 
 ## **CHART 2**:  
@@ -111,6 +106,6 @@ the cases have continued to increase. This is important in answering the questio
 source("../source/chart_2.R")
 ```
 
-```{r echo=FALSE}
+```{r echo = FALSE}
 plot(chart_2)
 ```
