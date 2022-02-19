@@ -26,3 +26,6 @@ hospital_df$date <- str_sub(hospital_df$date, end = -14)
 hospital_df <- hospital_df %>% 
   mutate(year = substr(hospital_df$date, start = 1, stop = 4)) %>% 
   select(year, state, inpatient_beds_used_covid)
+
+
+

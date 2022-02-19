@@ -38,4 +38,4 @@ hospital_df <- hospital_df %>%
   select(year, state, inpatient_beds_used_covid)
 
 covid_line <- ggplot(data = hospital_df) + 
-  geom_line(mapping = aes(x = state, y = inpatient_beds_used))
+  geom_line(mapping = aes(x = state, y = inpatient_beds_used_covid))

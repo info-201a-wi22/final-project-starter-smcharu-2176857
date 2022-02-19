@@ -2,6 +2,8 @@
 #This data provides the reader with the hospitalizations related to COVID 19 BY EACH MONTH
 #This is important because it provides justification for why some states may have received more money then others, hence a state with high allocation funds could have been because they had more patients and hence had more need 
 
+
+#our data sets
 df1 <- read.csv("https://data.cdc.gov/api/views/b58h-s9zx/rows.csv?accessType=DOWNLOAD", header = TRUE, stringsAsFactors = FALSE)
 df2 <- read.csv("https://api.covidtracking.com/v1/states/current.csv", header = TRUE, stringsAsFactors = FALSE)
 df3 <- read.csv("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnytimes%2Fcovid-19-data%2Fmaster%2Fus-states.csv&filename=us-states.csv", header = TRUE, stringsAsFactors = FALSE)
