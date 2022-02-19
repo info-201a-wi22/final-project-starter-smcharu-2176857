@@ -48,18 +48,18 @@ summary_info$most_funding <- combined_data %>%
   filter(total_payment == max(total_payment)) %>%
   pull(State)
 
-# Value 2: Calculates state that recieved least funding
+# Value 2: Calculates state that received least funding
 summary_info$least_funding <- combined_data %>%
   filter(total_payment == min(total_payment)) %>%
   pull(State)
 
-# Value 3: State with most total hospitalized patients
+# Value 3: State with most hospitalized patients
 summary_info$most_patients <- combined_data %>%
   filter(hospitalizedCumulative
          == max(hospitalizedCumulative, na.rm = TRUE)) %>%
   pull(State)
 
-# Value 4: State with most least hospitalized patients
+# Value 4: State with least hospitalized patients
 summary_info$least_patients <- combined_data %>%
   filter(hospitalizedCumulative
          == min(hospitalizedCumulative, na.rm = TRUE)) %>%

@@ -11,5 +11,7 @@ library("ggplot2")
 chart_2 <- ggplot(state_df) +
   geom_point(mapping = aes(x = cases, y = deaths)) +
   labs(
-    title = "Comparison between Cases and Deaths"
+    title = "Comparison between Cases and Deaths",
+    x = "Cases",
+    y = "Deaths"
   )
