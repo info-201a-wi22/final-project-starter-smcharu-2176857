@@ -6,17 +6,17 @@ library("tidyr")
 
 # DATA WRANGLING
 # Getting rid of commas and dollar signs in X1st.Round.Payment
-df1$X1st.Round.Payment <- c(df1$X1st.Round.Payment)
-df1$X1st.Round.Payment <- gsub("[$,]", "", df1$X1st.Round.Payment)
-df1$X1st.Round.Payment <- as.numeric(df1$X1st.Round.Payment)
+funds_df$X1st.Round.Payment <- c(funds_df$X1st.Round.Payment)
+funds_df$X1st.Round.Payment <- gsub("[$,]", "", funds_df$X1st.Round.Payment)
+funds_df$X1st.Round.Payment <- as.numeric(funds_df$X1st.Round.Payment)
 
 # Getting rid of commas and dollar signs in X2nd.Round.Payment
-df1$X2nd.Round.Payment <- c(df1$X2nd.Round.Payment)
-df1$X2nd.Round.Payment <- gsub("[$,]", "", df1$X2nd.Round.Payment)
-df1$X2nd.Round.Payment <- as.numeric(df1$X2nd.Round.Payment)
+funds_df$X2nd.Round.Payment <- c(funds_df$X2nd.Round.Payment)
+funds_df$X2nd.Round.Payment <- gsub("[$,]", "", funds_df$X2nd.Round.Payment)
+funds_df$X2nd.Round.Payment <- as.numeric(funds_df$X2nd.Round.Payment)
 
 # Data Frame with total sum of payment for each state
-df1_state <- df1 %>%
+df1_state <- funds_df %>%
   group_by(State) %>%
   select(-c(Returned..1st.Payment.)) %>%
   summarize(
@@ -25,11 +25,11 @@ df1_state <- df1 %>%
   )
 
 # Renaming column "state" to "State"
-df2 <- df2 %>%
+hospital_df <- hospital_df %>%
   rename(State = state)
 
 # Combining df1 and df2
-combined_data <- left_join(df1_state, df2, by = c("State"))
+combined_data <- left_join(df1_state, hospital_df, by = c("State"))
 combined_data <- combined_data %>%
   mutate(total_payment = first_round_payment + second_round_payment)
 #
@@ -79,3 +79,4 @@ summary_info$most_positive_cases <- combined_data %>%
 summary_info$least_positive_cases <- combined_data %>%
   filter(positive == min(positive, na.rm = TRUE)) %>%
   pull(State)
+
