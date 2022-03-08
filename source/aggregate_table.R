@@ -60,8 +60,3 @@ total_patient_comparison <- total_patient_comparison %>%
 # Joining datasets together
 patient_funding_comparison <-
   left_join(state_total_funding, total_patient_comparison, by = c("State"))
-
-
-# Joining datasets together 
-patient_funding_comparison <- 
-  left_join(state_total_funding, total_patient_comparison, by = c("State"))
