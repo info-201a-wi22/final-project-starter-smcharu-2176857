@@ -45,7 +45,26 @@ sidebarLayout(
 )
     )
   )
-  
+
+# Define Page Three
+page_three <-
+  tabPanel(
+   "Bar Chart",
+    fluidPage(
+h1("Bar Chart of Number of Hospitlizations VS Deaths"),
+p("Writing"),
+sidebarLayout(
+  sidebarPanel(
+    selectInput(inputId = "state",
+                label = "Select A state",
+                choices = state_df$state,
+                selected ="Washington", #multiple = TRUE
+    )
+  ),
+  mainPanel(plotOutput(outputId = "barchart"))
+)
+    )
+  )
 
 # Define ui
 ui <- (

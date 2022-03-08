@@ -52,17 +52,15 @@ final <- final_data %>%
   na.omit()
 #Defined a UI
 ui <- fluidPage(
-               titlePanel("Measurements of COVID-19 per state"),
-               sidebarLayout(
-                 sidebarPanel(
-                   selectInput(inputId = "state",
-                               label = "Select A state",
-                               choices = final$state,
-                               selected ="Washington", 
-                               #multiple = TRUE
-                   ),
-                 ),
-                 mainPanel(plotOutput(outputId = "barchart")
-)
-)
+  titlePanel("Measurements of COVID-19 per state"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(inputId = "state",
+                  label = "Select A state",
+                  choices = final$state,
+                  selected ="Washington", #multiple = TRUE
+                  )
+    ),
+    mainPanel(plotOutput(outputId = "barchart"))
+  )
 )

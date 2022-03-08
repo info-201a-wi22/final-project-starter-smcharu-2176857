@@ -50,18 +50,18 @@ final <- final_data %>%
   na.omit()
 #DEFINED A SERVER
 server <- function(input, output){ 
-output$barchart <- renderPlot({
-  final <- final_data %>%
-    filter(state == input$state) %>% 
-    gather(type, amount, -state) 
- ggplot(data = final) +
-    geom_col(mapping = aes(x = type , y = amount , fill = input$state)) +
-   scale_fill_manual(values = "#A846A0") +
-    labs(
-      title = "Measurements of COVID-19 since March 7, 2020",
-      x = "Measurements of COVID-19",
-      y = "Total Amount of People", 
-      fill = "state"
-    ) 
-})
+  output$barchart <- renderPlot({
+    final <- final_data %>%
+      filter(state == input$state) %>% 
+      gather(type, amount, -state) 
+   ggplot(data = final) +
+      geom_col(mapping = aes(x = type , y = amount , fill = input$state)) +
+     scale_fill_manual(values = "#A846A0") +
+      labs(
+        title = "Measurements of COVID-19 since March 7, 2020",
+        x = "Measurements of COVID-19",
+        y = "Total Amount of People", 
+        fill = "state"
+      ) 
+  })
 }
