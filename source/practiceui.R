@@ -16,7 +16,7 @@ ui <- fluidPage(
     sidebarPanel(
       selectInput(inputId = "state",
                   label = "Select A state",
-                  choices = final$state,
+                  choices = state_df$state,
                   selected ="Washington"
                   )
     ),

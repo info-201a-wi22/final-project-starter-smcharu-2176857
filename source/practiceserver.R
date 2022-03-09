@@ -15,7 +15,7 @@ library("shiny")
 server <- function(input, output){ 
   output$scatterplot <- renderPlot({
     final <- state_df %>%
-      filter(state == input$state)  
+      filter(state == input$state) 
      
    ggplot(data = final) +
       geom_point(mapping = aes(x = cases , y = deaths , color = input$state)) +
