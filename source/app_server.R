@@ -78,32 +78,33 @@ final <- final_data %>%
   na.omit()
 
 #Made a variable for UI select options
-choice_states <- unique(state_data$state)
+choice_states <- unique(state_df$state)
 
 
 #####################################################################
 server <- function(input, output) {
   # Map!!
   output$map <- renderPlotly({
-     plot_usmap(data = patient_funding_comparison, values = input$value, color = "red") + 
+     plot_usmap(data = patient_funding_comparison, values = input$value, 
+                color = "red") + 
       scale_fill_continuous(name = "Value", label = scales::comma) + 
       theme(legend.position = "right")
   })
   
   
   # BARCHART !!
-  output$barchart <- renderPlotly({
-    final <- final_data %>%
-      filter(state == input$state) %>% 
-      gather(type, amount, -state) 
+  output$scatterplot <- renderPlotly({
+    final <- state_df %>%
+      filter(state == input$state) 
+    
     ggplot(data = final) +
-      geom_col(mapping = aes(x = type , y = amount , fill = input$state)) +
+      geom_point(mapping = aes(x = cases , y = deaths , color = input$state)) +
       scale_fill_manual(values = "#A846A0") +
       labs(
-        title = "Measurements of COVID-19 since March 7, 2020",
+        title = "Measurements of COVID-19 since March 7, 2021",
         x = "Measurements of COVID-19",
         y = "Total Amount of People", 
-        fill = "state"
+        color = "state"
       ) 
   })
 }

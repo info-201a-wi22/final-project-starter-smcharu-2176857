@@ -50,21 +50,19 @@ sidebarLayout(
 # Define Page Three
 page_three <-
   tabPanel(
-   "Barchart",
+    "Scatter Plot",
     fluidPage(
-h1("Barchart comparing showcasing the number of Deaths Vs. Hospitalizations"),
-p("Writing"),
-sidebarLayout(
-  sidebarPanel(
-    selectInput(inputId = "state",
-                label = "Select a state",
-                choices = choice_states, 
-                selected = "Washington", 
-            
-    )
-  ),
-  mainPanel(plotlyOutput(outputId = "barchart"))
-)
+      titlePanel("Measurements of COVID-19 per state"),
+      sidebarLayout(
+        sidebarPanel(
+          selectInput(inputId = "state",
+                      label = "Select A state",
+                      choices = choice_states,
+                      selected = "Washington"
+          )
+        ),
+        mainPanel(plotlyOutput(outputId = "scatterplot"))
+      )
     )
   )
 
