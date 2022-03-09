@@ -59,25 +59,25 @@ patient_funding_comparison <-
 
 # Scatter Plot
 #Data Wrangling
-state_data <- state_df %>%
-  filter(date == "2021-03-07") %>% 
-  select(state, deaths)  
+#state_data <- state_df %>%
+  #filter(date == "2021-03-07") %>% 
+  #select(state, deaths)  
 
-hospital <- hospital_df2 %>% 
-  mutate(state = abbr2state(state)) %>% 
-  select(state, hospitalizedCumulative)
+#hospital <- hospital_df2 %>% 
+  #mutate(state = abbr2state(state)) %>% 
+  #select(state, hospitalizedCumulative)
 
 #Combined the data set:
-final_data <- left_join(hospital, state_data, by = c("state")) %>% 
-  rename(hospitalized = hospitalizedCumulative) %>% 
-  na.omit()
+#final_data <- left_join(hospital, state_data, by = c("state")) %>% 
+  #rename(hospitalized = hospitalizedCumulative) %>% 
+ # na.omit()
 
 #Made the final dataset
-final <- final_data %>%
-  gather(type, amount, -state) %>% 
-  na.omit()
+#final <- final_data %>%
+  #gather(type, amount, -state) %>% 
+  #na.omit()
 
-#Made a variable for UI select options
+#Made a variable for UI select options for the scatterplot
 choice_states <- unique(state_df$state)
 
 
@@ -92,18 +92,18 @@ server <- function(input, output) {
   })
   
   
-  # BARCHART !!
+  # Scatter Plot !!
   output$scatterplot <- renderPlotly({
     final <- state_df %>%
       filter(state == input$state) 
     
     ggplot(data = final) +
-      geom_point(mapping = aes(x = cases , y = deaths , color = input$state)) +
-      scale_fill_manual(values = "#A846A0") +
+      geom_point(mapping = aes(x = cases , y = deaths , color = input$state), 
+                 size = 1.5) +
       labs(
-        title = "Measurements of COVID-19 since March 7, 2021",
-        x = "Measurements of COVID-19",
-        y = "Total Amount of People", 
+        title = "Cases vs Deaths per State",
+        x = "Cases",
+        y = "Deaths", 
         color = "state"
       ) 
   })

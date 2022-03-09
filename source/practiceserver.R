@@ -19,11 +19,11 @@ server <- function(input, output){
      
    ggplot(data = final) +
       geom_point(mapping = aes(x = cases , y = deaths , color = input$state)) +
-     scale_fill_manual(values = "#A846A0") +
+     scale_color_manual(values = "#A846A0") +
       labs(
-        title = "Measurements of COVID-19 since March 7, 2021",
-        x = "Measurements of COVID-19",
-        y = "Total Amount of People", 
+        title = "Cases Vs. Deaths per State",
+        x = "Number of Cases",
+        y = "Number of Deaths", 
         color = "state"
       ) 
   })
