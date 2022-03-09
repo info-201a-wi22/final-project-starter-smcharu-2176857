@@ -12,7 +12,10 @@ library(usmap)
 funds_df <- read.csv("https://data.cdc.gov/api/views/b58h-s9zx/rows.csv?accessType=DOWNLOAD", header = TRUE, stringsAsFactors = FALSE)
 hospital_df <- read.csv("https://healthdata.gov/resource/g62h-syeh.csv", header = TRUE, stringsAsFactors = FALSE)
 state_df <- read.csv("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnytimes%2Fcovid-19-data%2Fmaster%2Fus-states.csv&filename=us-states.csv", header = TRUE, stringsAsFactors = FALSE)
+hospital_df2 <- read.csv("https://api.covidtracking.com/v1/states/current.csv", header = TRUE, stringsAsFactors = FALSE) 
 
+
+  
 # MAP
 
 #DATA WRANGLING
@@ -55,12 +58,52 @@ patient_funding_comparison <-
 ##########################################################################
 
 # Scatter Plot
+#Data Wrangling
+state_data <- state_df %>%
+  filter(date == "2021-03-07") %>% 
+  select(state, deaths)  
 
+hospital <- hospital_df2 %>% 
+  mutate(state = abbr2state(state)) %>% 
+  select(state, hospitalizedCumulative)
+
+#Combined the data set:
+final_data <- left_join(hospital, state_data, by = c("state")) %>% 
+  rename(hospitalized = hospitalizedCumulative) %>% 
+  na.omit()
+
+#Made the final dataset
+final <- final_data %>%
+  gather(type, amount, -state) %>% 
+  na.omit()
+
+#Made a variable for UI select options
+choice_states <- unique(state_data$state)
+
+
+#####################################################################
 server <- function(input, output) {
   # Map!!
   output$map <- renderPlotly({
      plot_usmap(data = patient_funding_comparison, values = input$value, color = "red") + 
       scale_fill_continuous(name = "Value", label = scales::comma) + 
       theme(legend.position = "right")
+  })
+  
+  
+  # BARCHART !!
+  output$barchart <- renderPlotly({
+    final <- final_data %>%
+      filter(state == input$state) %>% 
+      gather(type, amount, -state) 
+    ggplot(data = final) +
+      geom_col(mapping = aes(x = type , y = amount , fill = input$state)) +
+      scale_fill_manual(values = "#A846A0") +
+      labs(
+        title = "Measurements of COVID-19 since March 7, 2020",
+        x = "Measurements of COVID-19",
+        y = "Total Amount of People", 
+        fill = "state"
+      ) 
   })
 }

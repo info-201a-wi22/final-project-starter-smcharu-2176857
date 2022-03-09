@@ -1,6 +1,7 @@
 library(shiny)
 library(ggplot2)
 library(plotly)
+state_df <- read.csv("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnytimes%2Fcovid-19-data%2Fmaster%2Fus-states.csv&filename=us-states.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Define Page One
 
@@ -49,19 +50,20 @@ sidebarLayout(
 # Define Page Three
 page_three <-
   tabPanel(
-   "Bar Chart",
+   "Barchart",
     fluidPage(
-h1("Bar Chart of Number of Hospitlizations VS Deaths"),
+h1("Barchart comparing showcasing the number of Deaths Vs. Hospitalizations"),
 p("Writing"),
 sidebarLayout(
   sidebarPanel(
     selectInput(inputId = "state",
-                label = "Select A state",
-                choices = state_df$state,
-                selected ="Washington", #multiple = TRUE
+                label = "Select a state",
+                choices = choice_states, 
+                selected = "Washington", 
+            
     )
   ),
-  mainPanel(plotOutput(outputId = "barchart"))
+  mainPanel(plotlyOutput(outputId = "barchart"))
 )
     )
   )
@@ -71,7 +73,8 @@ ui <- (
   fluidPage(
     navbarPage(
       "Final Project",
-      page_two
+      page_two, 
+      page_three
     )
   )
 )
