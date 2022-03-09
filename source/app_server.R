@@ -14,7 +14,7 @@ hospital_df <- read.csv("https://healthdata.gov/resource/g62h-syeh.csv", header 
 state_df <- read.csv("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnytimes%2Fcovid-19-data%2Fmaster%2Fus-states.csv&filename=us-states.csv", header = TRUE, stringsAsFactors = FALSE)
 hospital_df2 <- read.csv("https://api.covidtracking.com/v1/states/current.csv", header = TRUE, stringsAsFactors = FALSE) 
 
-
+##########################################################################
   
 # MAP
 
@@ -41,7 +41,7 @@ state_total_funding <- funds_df %>%
 state_total_funding$State <- abbr2state(state_total_funding$State)
 
 # Data frame with total patients in each state
-state_total_patient<- hospital_df %>% 
+state_total_patient <- hospital_df %>% 
   group_by(state) %>% 
   summarize(state_total_patients = sum(inpatient_beds_used_covid, na.rm = TRUE))
 
@@ -59,29 +59,10 @@ patient_funding_comparison <-
 
 # Scatter Plot
 #Data Wrangling
-#state_data <- state_df %>%
-  #filter(date == "2021-03-07") %>% 
-  #select(state, deaths)  
-
-#hospital <- hospital_df2 %>% 
-  #mutate(state = abbr2state(state)) %>% 
-  #select(state, hospitalizedCumulative)
-
-#Combined the data set:
-#final_data <- left_join(hospital, state_data, by = c("state")) %>% 
-  #rename(hospitalized = hospitalizedCumulative) %>% 
- # na.omit()
-
-#Made the final dataset
-#final <- final_data %>%
-  #gather(type, amount, -state) %>% 
-  #na.omit()
-
-#Made a variable for UI select options for the scatterplot
 choice_states <- unique(state_df$state)
 
 
-#####################################################################
+##########################################################################
 server <- function(input, output) {
   # Map!!
   output$map <- renderPlotly({
@@ -98,7 +79,7 @@ server <- function(input, output) {
       filter(state == input$state) 
     
     ggplot(data = final) +
-      geom_point(mapping = aes(x = cases , y = deaths , color = input$state), 
+      geom_point(mapping = aes(x = cases, y = deaths, color = input$state), 
                  size = 1.5) +
       labs(
         title = "Cases vs Deaths per State",

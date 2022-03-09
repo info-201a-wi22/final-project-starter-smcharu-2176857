@@ -1,19 +1,21 @@
 library(shiny)
 library(ggplot2)
 library(plotly)
+
 state_df <- read.csv("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnytimes%2Fcovid-19-data%2Fmaster%2Fus-states.csv&filename=us-states.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Define Page One
 
 page_one <- 
   tabPanel(
-    "Introducion" ,
+    "Introducion",
     fluidPage(
       h1("Introduction"),
       img(
         src = "corona.png",
         height = 500, 
         width = 900
+      )
       ),
       p("This report dives into the ways the funding was handled and allocated 
         to hospitals during the start of the COVID-19 pandemic. We assess how 
@@ -22,7 +24,7 @@ page_one <-
         our project to represent the data and how COVID-19 has impacted 
         the healthcare system as well as the economy."),
     )
-  )
+  
 
 # Define Page Two
 page_two <- 
@@ -33,7 +35,8 @@ h1("Hospitalization Funds and Hospitlaizations in the United States"),
 p("This is a map of the United States that shows the amount of funds given to
   hospitals in each state through the Bipartisan CARES Act Paycheck 
   Protection Program and Health Enhancement Act and it also shows the number
-  of hospitlizations per state. Based on the scale, you can see that the lighter 
+  of hospitlizations per state. Based on the scale, you can see that the 
+  lighter 
   the blue is, the more hospital funds and hospitlization numbers the state 
   has gotten. Grayed out states are ones that do not have any accumulated data.
   One of our main research questions was surrounding the allocation
@@ -75,7 +78,7 @@ page_three <-
       sidebarLayout(
         sidebarPanel(
           selectInput(inputId = "state",
-                      label = "Select A state",
+                      label = "Select a state",
                       choices = choice_states,
                       selected = "Washington"
           )
@@ -94,9 +97,9 @@ page_three <-
         This scatterplot shows us how COVID-19 has impacted each 
         state, being able to put a number to the exact amount of cases and 
         deaths shows impac, as it can be seen California had one of the
-        highest numbers of cases. This chart can also be used in comparison with
-        additonal data such as the map. This comparison can reveal if states with
-        a high number of cases also have the highest number 
+        highest numbers of cases. This chart can also be used in comparison 
+        with additonal data such as the map. This comparison can reveal if 
+        states with a high number of cases also have the highest number 
         of hospitalizations. " 
 
 ))
@@ -107,7 +110,12 @@ page_three <-
 page_four <- 
   tabPanel(
     "Summary",
-    fluidPage( titlePanel("What to Take Away"),
+    img(
+      src = "test.jpg",
+      height = 500, 
+      width = 900
+    ),
+    fluidPage(titlePanel("What to Take Away"),
       p("As can be seen, the main takeaways from the project are the analysis 
       regarding which states had the most funding, which states had the most 
       patients, and which state had the least funding. First, it is evident 
@@ -164,12 +172,12 @@ page_five <-
         of the relief funds and to also have an understanding of how COVID-19 
         has impacted the healthcare system as well as the economy."),
       h3("Design Situation"),
-      h5("Project Framing:"),
+      h5(tags$em("Project Framing:")),
       p("We are hoping to take this dataset and analyze the distribution of 
         funding and compare it to the impact of COVID-19 to get a clear picture 
         of the help that these healthcare providers received through the 
         funds."),
-      h5("Human Values: "),
+      h5(tags$em("Human Values: ")),
       p("The funding was given by the government through the CARES Act and the 
         Paycheck Protection Program and Health Care Enhancement Act allows for 
         security for all parts of healthcare systems such as the administration,
@@ -178,7 +186,7 @@ page_five <-
         over the country. The government is splitting up funds to each location 
         depending on the number of cases in the area and with this, they are 
         practicing equity."),
-      h5("Direct Stakeholders:"),
+      h5(tags$em("Direct Stakeholders:")),
       p("The United States Government, the U.S. Department of Health and 
         Human Services (HRSA), the Centers for Disease Control and 
         Prevention (CDC), and hospitals that have received aid. The U.S. 
@@ -186,14 +194,14 @@ page_five <-
         around the country. The HRSA is the department that has collected the 
         data with the CDC being the organization that has federally funded this
         collection."),
-      h5("Indirect Stakeholders:"),
+      h5(tags$em("Indirect Stakeholders:")),
       p(" Indirect Stakeholders would be individuals who were admitted into 
         hospitals that received funding through the CARES Act and the Paycheck 
         Protection Program and Health Care Enhancement Act as it would have 
         helped the patients. Along with this, the front-line workers are also 
         indirect stakeholders as they were given aid through the funding given 
         to them."),
-      h5("Benefits:"),
+      h5(tags$em("Benefits:")),
       p("With the capacity and limits of hospitals and other healthcare systems 
         being pushed to the brim, the received financial aid eased the stress 
         and tension of front-line workers and saved the lives of individuals 
@@ -203,16 +211,16 @@ page_five <-
         helps visualize which areas in the country got more funding compared to 
         other areas. With this visualization we can analyze the distribution of 
         funds and if it was done in an effective manner."),
-      h5("Harms"),
+      h5(tags$em("Harms: ")),
       p(" When a viewer takes a look at this dataset, they might mistake this 
         dataset to be a record of the total amount of funding that these 
         healthcare administrators had received, rather than just the amount 
         of money that they received through these two Acts."),
       h3("Research Questions: How COVID-19 Impacted the Health Care System"),
-      p("1. How were relief funds decided during the pandemic, 
-        what were the criteria?"),
-      p("2. Which states had the most patients?"),
-      p("3. Which states were affected by the pandemic most?"),
+      p(tags$em("1. How were relief funds decided during the pandemic, 
+        what were the criteria?")),
+      p(tags$em("2. Which states had the most patients?")),
+      p(tags$em("3. Which states were affected by the pandemic most?")),
       p("The questions are important because during the era of the COVID-19 
         pandemic, while population health was affected by skyrocketing death 
         rates, the economy was also an issue. There was a lack of finances in 
@@ -229,11 +237,11 @@ page_five <-
         distribution of funds to cities one can answer the question of which 
         cities and states were affected most."),
       h3("The Dataset"),
-      h5("SIZE AND COMPLEXITY:"),
+      h5(tags$em("SIZE AND COMPLEXITY:")),
       p("This data set consists of 6 features (columns) and more than 200 
         observations (rows). The data is taken from a national scale of the
         United States of America."),
-      h5("Who or what is represented in the data?"),
+      h5(tags$em("Who or what is represented in the data?")),
       p("The data represents the quantitative impact of the bipartisan CARES
         Act and the Paycheck Protection Program and Health Enhancement Act, 
         by showing the number of funds given to hospitals around the nation.
@@ -244,7 +252,8 @@ page_five <-
         it represents the economic standing and need of these hospitals, which 
         can be correlated to the financial standing of the states in which they 
         are located."),
-      h5("What is an observation? What variables are included (and excluded)?"),
+      h5(tags$em("What is an observation? What variables are included 
+                 (and excluded)?")),
       p("An observation represents the case in which characteristics are being 
         collected. A variable is what keys/attributes are being collected on 
         these observations. In this sense, an observation would be the rows, 
@@ -253,12 +262,14 @@ page_five <-
         in, the amount of money returned, the money given to them in the first 
         round of allocation, and finally the amount of money given during the 
         second round of allocation. The variables that were excluded would be 
-        the number of patients being treated at the specific time of allocation. 
+        the number of patients being treated at the specific time of 
+        allocation. 
         Although all these hospitals had over 100 COVID-19 patients, it 
         excludes the amount in each hospital specifically."),
-      h5("Who collected the data? When? For what purpose? How was the data 
+      h5(tags$em("Who collected the data? When? For what purpose?
+          How was the data 
          collection effort funded? Who is likely to benefit from the data or
-         make money?"),
+         make money?")),
       p("The U.S Department of Health and Human Services (HRSA), collected the 
         data. In terms of who published the data, the data collection was 
         funded federally through the CDC, which pays great attention to all 
@@ -274,8 +285,9 @@ page_five <-
         hospitals in need. However, the recognition they would benefit doesn't 
         suggest that anyone would make money from this data set, in fact, the 
         opposite."),
-      h5("How was the data validated and held secure? Is it credible and 
-         trustworthy?"),
+      h5(tags$em("How was the data validated and held secure? 
+      Is it credible and 
+         trustworthy?")),
       p("The data is validated in the terms that it came from a federal 
         institution, it was data essentially created by the government, which 
         in this society is taken to be validated because it would be coming 
@@ -284,7 +296,8 @@ page_five <-
         credibility, it is posted on the CDC database which goes to show that 
         it is true because the CDC is held to be one of the most respected 
         research databases."),
-      h5("How did you obtain the data? Do you credit the source of the data?"),
+      h5(tags$em("How did you obtain the data? Do you credit the 
+                 source of the data?")),
       p("We obtained it through the “DATA.gov” website that the government has. 
         The website contains datasets from a range of subjects. We selected the 
         U.S. Department of Health which contained datasets concerning the 
@@ -346,11 +359,21 @@ ui <- (
   fluidPage(
     navbarPage(
       "Final Project",
-      page_one,
-      page_two, 
-      page_three, 
-      page_four,
-      page_five
+      tabPanel("Introduction", page_one),
+      tabPanel("Map", page_two),
+      tabPanel("Scatter Plot", page_three),
+      tabPanel("Summary", page_four),
+      tabPanel("Report", page_five),
+      tags$style(type = 'text/css', 
+                 '.navbar { background-color: #B0C4DE;}',
+                 '.navbar-default .navbar-brand{color: white;}',
+                 '.tab-panel{ background-color: red; color: white}',
+                 '.nav navbar-nav li.active:hover a, .nav navbar-nav 
+                 li.active a {
+                        background-color: green ;
+                        border-color: green;
+                        }'
+                 
+      ))
     )
   )
-)

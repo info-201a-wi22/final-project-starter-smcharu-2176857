@@ -1,0 +1,13 @@
+name: source
+title: source
+username:
+account: smcharu
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5813220
+bundleId: 5662939
+url: https://smcharu.shinyapps.io/source/
+when: 1646851235.9688
+lastSyncTime: 1646851235.96881
+asMultiple: FALSE
+asStatic: FALSE
