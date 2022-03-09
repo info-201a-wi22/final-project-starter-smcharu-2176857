@@ -5,6 +5,15 @@ state_df <- read.csv("https://data.humdata.org/hxlproxy/api/data-preview.csv?url
 
 # Define Page One
 
+page_one <- 
+  tabPanel(
+    "Introducion" ,
+    fluidPage(
+      "Introduction",
+      p("This report dives into the ways the funding was handled and allocated to hospitals during the start of the COVID-19 pandemic. We assess how the funding of the CARES Act and the Paycheck Protection Program and Health Care Enhancement Act and how that was handled. We want our project to represent the data and how COVID-19 has impacted the healthcare system as well as the economy."),
+    )
+  )
+
 # Define Page Two
 page_two <- 
   tabPanel(
@@ -117,6 +126,67 @@ page_four <-
       in Florida were more severe than those in California resulting in more 
       hospitalizations.")
      
+    )
+  )
+page_five <- 
+  tabPanel(
+    "Report",
+    fluidPage(
+      h1("Report"),
+      h2("Findings:"),
+      p("During the pandemic, funds were released to hospitals to 
+        help assist with the floods of people and to ease financial 
+        pressure off hospitals during the pandemic. When relief funds 
+        started being handed out to individual hospitals, they were handed 
+        out based on the amount of people they have. When diving deeper into that,
+        you see certain places such as New York and Illinois who do not have that many 
+        patients receive a disproportionate amount of funds, which leads to the reason 
+        why the data is supposed to show some of the less meaningful funds that could 
+        have been distributed elsewhere. When looking at the data, you see the states 
+        that were affected the most in the U.S. were California, Texas and Florida. When 
+        looking deeper into that, you see the trend of how states like Illinois were given
+        much more than a place with higher hospitalizations such as Florida. In conclusion, we wanted our 
+        findings to show the disproportionality in how the funds were distributed by state. ")
+    )
+  )
+
+page_five <- 
+  tabPanel(
+    "Report",
+    fluidPage(
+      h1( "Report"),
+      h2( "Discussion:"),
+      p("When looking at the overall data and the work that was done to 
+        show these findings in the data, I would say that the most important 
+        thing that came out of this report was showing how the money that was 
+        being distributed to hospitals and why some places received more than
+        others and vice versa. During the pandemic the people suffered as well 
+        as the economy. While the economy was not plummeting down, it was hard to 
+        spread out money due to the amount of people that were contracting the virus.
+        One of our main goals was to show the disproportionate ways the funds were 
+        allocated and wanting to show this to help raise awareness and raise questions 
+        as to why the policies that were first listed to prevent this type of thing from 
+        happening were not being applied. Things such as one’s economic status and things
+        along those lines could always be a factor of why funds were not distributed 
+        evenly and it was a goal that our report can show the improper ways the funds 
+        were allocated. The allocation of funds, while it does not seem like a serious 
+        thing, could actually potentially changed some things such as how certain cases could have been handled differently 
+        with some extra help or how certain cases of COVID could have been prevented if there was some extra financial assistance which then 
+        would have led to more equipment and things along those lines.")
+    )
+  )
+page_five <- 
+  tabPanel(
+    "Report",
+    fluidPage(
+      h1("Report"),
+      h2("Conclusion:"),
+      p("In conclusion, our report was intended to show the common 
+        trends and the mistakes that were made when allocating the funds 
+        to hospitals around the country. We wanted to show the ties and how
+        the pandemic led to not only the healthcare system being impacted 
+        severely but also the economy and how that led to the findings in our 
+        research that we now have in our report.")
     )
   )
 
